@@ -1,0 +1,1054 @@
+@charset "utf-8";
+
+/*ブラウザスタイルの初期化
+reset.cssをリンクする場合は不要*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body,a{
+    cursor: none;
+}
+
+#cursor {
+    transform: translate(0, 0);
+    pointer-events: none;
+    position: fixed;
+    top: -4px;
+    left: -4px;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    z-index: 999;
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+}
+#cursor.hov_ {
+    top: -12px;
+    left: -12px;
+    width: 32px;
+    height: 32px;
+    background: rgba(200, 50, 50, 0.75);
+  }
+
+
+/*回り込み解除*/
+.clearfix:after{
+    display: block;
+    clear: both;
+    content:"";
+}
+
+/*style start*/
+
+/*cssプロパティを記述する順番
+
+1.視覚整形モデル
+→要素を表示するか、要素をどこに表示するか
+display
+list-style
+position
+float
+clear
+
+2.ボックスモデル
+→ボックスモデルの大きさや間隔
+width
+height
+margin
+padding
+border
+
+3.背景
+→背景色や背景イメージなど
+background
+
+4.フォント、テキスト、色
+→文字に関すること
+color
+font
+text-decoration
+text-align
+
+5.その他
+→１〜４に該当しないものなど
+vertical-align
+white-space
+content
+
+*/
+
+body {
+    background-color:rgb(249, 250, 248);
+}
+
+
+
+.index_body{
+    width:100%;/*wrapperつまり、サイトの横幅*/
+    margin: 0 auto;/*ブラウザ内で中央表示*/
+    background-color: rgb(255, 255, 255);/*背景色*/ 
+}
+.index_body{
+    background: linear-gradient(-45deg, #f5b57a, #e8ebe1) fixed;
+}
+
+.index_body{
+    background: linear-gradient(-45deg, #f1bd78, #e2e46985, rgba(250, 250, 249, 0.404), #f0efee) fixed;
+    background-size: 800% 800%;
+    animation: GradietionAnimation 9s ease infinite;
+}
+
+.wrapper{
+    width:100%;/*wrapperつまり、サイトの横幅*/
+    margin: 0 auto;/*ブラウザ内で中央表示*/
+    background-color: rgb(255, 255, 255);/*背景色*/ 
+}
+.wrapper{
+    background: linear-gradient(-45deg, #f5b57a, #e8ebe1) fixed;
+}
+
+.wrapper{
+    background: linear-gradient(-45deg, #f1bd78, #e2e46985, rgba(250, 250, 249, 0.404), #f0efee) fixed;
+    background-size: 800% 800%;
+    animation: GradietionAnimation 9s ease infinite;
+}
+
+@keyframes GradietionAnimation { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+header{
+    width:100%;
+    height: 50px;
+    /*margin: 0 auto;*/
+    top: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: rgb(240, 253, 193);/*背景色*/
+  }
+
+.index_header{
+    width:100%;
+    height: 50px;
+    /*margin: 0 auto;*/
+    top: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: rgba(240, 253, 193, 0);/*背景色*/
+    position: absolute;
+    z-index: 900;
+}
+
+.logo {
+    font-size: 24px;
+}
+  
+  
+  /*------------------------------
+  
+    ここから下がハンバーガーメニュー
+    に関するCSS
+  
+  ------------------------------*/
+    
+  /* チェックボックスは非表示に */
+  .drawer-hidden {
+    display: none;
+  }
+  
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer-open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上に */
+    cursor: pointer;
+  }
+  
+ul{
+    list-style: none;/*リストのブレットを非表示、reset.cssをリンクした場合は、記述不要の場合もある。*/
+}
+  /* ハンバーガーメニューのアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+content: '';
+display: block;
+height: 3px;
+width: 25px;
+border-radius: 3px;
+background: #333;
+transition: 0.5s;
+position: absolute;
+
+}
+
+/* 三本線のうち一番上の棒の位置調整 */
+.drawer-open span:before {
+bottom: 8px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+.drawer-open span:after {
+top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer-check:checked ~ .drawer-open span {
+background: rgba(255, 255, 255, 0);
+position: fixed;
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer-check:checked ~ .drawer-open span::before {
+bottom: 0;
+transform: rotate(45deg);
+
+}
+
+#drawer-check:checked ~ .drawer-open span::after {
+top: 0;
+transform: rotate(-45deg);
+
+}
+
+/* メニューのデザイン*/
+.drawer-content {
+width: 100%;
+height: 100%;
+/*margin-left: 700px ;*/
+float: right;
+position: fixed;
+top: 0;
+left: 100%;/* メニューを画面の外に飛ばす */
+z-index: 99;
+background: rgba(240, 253, 193, 0.575);;
+transition: .5s;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer-check:checked ~ .drawer-content {
+left: 0;/* メニューを画面に入れる */
+}
+.cara_logo{
+    margin-right: auto;
+    padding-left: 20px;
+}
+
+/* .header-user{
+    /* margin-left: 900px; */
+    /* display: inline-flex; */
+    /* justify-content: flex-end; */
+/* }  */
+
+/*========= 検索窓を開くためのボタン設定 ===========*/
+
+.open-btn{
+    margin-left: px;
+    float: right;
+	top:10px;
+	right:10px;
+	background:url("../images/search.svg") no-repeat 15px center;/*虫眼鏡アイコンを背景に表示*/
+	background-size:20px;
+	width:50px;
+	height:50px;
+	cursor: pointer;/*カーソルを指マークに*/
+}
+
+.search-wrap{
+    float: right;
+}
+
+
+.header-left{
+    /* width: 300px;ヘッダーレフトエリアの横幅 */
+    margin-left: 200px;/*外側余白→左*/
+    /*↑↑↑これをショートハンドで書くと↓↓↓*/
+    /*margin: 13px 0 13px 30px;*/
+    /*background-color: #ca4d4d;*/
+    /* text-align: center;ヘッダーロゴを親要素の中で中央表示 */
+}
+
+.search_icon{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.header-user a:hover{
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.scroll_move{
+    background-color: aqua;
+}
+  
+nav{
+    width: 100px;
+    height: 100%;
+    /*float: right;
+    /* メニューを縦に */
+    padding-top: 1px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;   
+    float:right;
+    flex-direction: column;
+    background-color: rgba(229, 245, 191, 0.7);
+    /*z-index: 9999;*/
+}
+
+.nav_menu_li{
+    width: 100%;
+    height: 25px;
+    /* メニューテキスト位置をリスト内中心に */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /*z-index: 9999;*/
+    /*background-color: #b45f5f;*/
+  }
+
+
+.drawer-content{
+    display: flex;
+    list-style: none;
+}
+
+.drawer-content li a{
+    display: block;
+    padding:1px 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.drawer-content li{
+    float: left;
+    margin-top: 1px;
+    margin-bottom:20px;
+}
+
+
+/*==================================================
+　5-3-1 中心から外に線が伸びる（下部）
+===================================*/
+
+.drawer-content li a{
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+}
+
+.current a,
+.drawer-content li a:hover{
+	color:#2a3538e7;
+}
+
+.drawer-content li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    /*線の形状*/
+    width: 90%;
+    height: 2px;
+    background:#1d2020bb;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.current::after,
+.drawer-content li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+.nav_menu_ul{
+    padding-bottom: 20px;
+}
+
+.nav_text{
+    height: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 17px;
+    text-align:center;
+}
+/*
+
+ul{
+    list-style: none;/*リストのブレットを非表示、reset.cssをリンクした場合は、記述不要の場合もある。*/
+/*}
+
+ul li{
+    float: left;/*フロートして左寄せ*//*
+    width: 180px;/*ボタン１つあたりの横幅*/
+    /*border-radius: 20px;/*角を丸くする*/
+    /*text-align: center;/*中の文字を中央ぞろえにする*/
+/*}
+
+ul li a{
+    display: block;/*リンクのa要素の表示形式をインラインからブロックに変更することによりリンクのヒット領域を親要素のliと同じに広げている*/
+    /*padding: 10px 0;/*上下の内側に余白を10px*/
+    /*color: rgb(41, 41, 40);/*文字色*/
+    /*text-decoration: none;/*リンクの下線を消す*/
+/*}
+
+ul li a:hover{/*マウスが乗った時の変化*/
+    /*background-color: rgb(7, 7, 7);/*背景色*/
+    /*color: rgba(186, 204, 119, 0.514);/*文字色*/
+/*}
+*/
+
+
+
+
+main{
+    width: 100%;/*メインエリアの横幅*/
+    margin: 0 auto;/*ブラウザ内で中央表示*/
+    /* margin-top: 480px; */
+    /*margin-bottom: 30px;/*外側余白→下*/
+    /*background-color: rgba(253, 251, 251, 0.986);/*背景色*/
+    
+}
+
+.index_main{
+    width: 100%;/*メインエリアの横幅*/
+    margin: 0 auto;/*ブラウザ内で中央表示*/
+    margin-top: 480px;
+    /*margin-bottom: 30px;/*外側余白→下*/
+    /*background-color: rgba(253, 251, 251, 0.986);/*背景色*/
+}
+
+.main-visual{
+    text-align: center;/*画像を親要素の中で中央寄せ*/
+    position:absolute;
+}
+.main-visual{
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    /*z-index: 100;*/
+  }
+
+.main-visual img{
+    width: 100%;
+    transform: scale(1.1);
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition-duration: 0.5s;
+  }
+.main-visual img:hover{
+    filter: grayscale(0);
+    transition-duration: 0.5s;
+  }
+
+.main-visual-r{
+    box-shadow: 0 0 8px gray;/*影をつける*/
+}
+
+.mainvisual{
+    width: 100%;
+    height: 600px;
+    background-image: url(../images/mainvisual2.jpg);
+    background-repeat: no-repeat;/* 画像をリピートしない */
+    background-size: cover;
+    position: absolute;
+    /* 元画像の縦横比は保持して、
+    要素をちょうどよく覆うサイズにする。 */
+ }
+
+/* footer中のテキストを非表示 */
+.mainvisual p{
+    visibility: hidden;
+    /* visibility: hiddenは名の通り、
+    要素はあるけど見えない状態。
+    display:none葉要素も取得されず、
+    完全にその場にない扱い。 */
+}
+
+
+.filter{
+    width: 100%;
+    height: 600px;
+    background-color: rgba(232, 235, 217, 0.315);
+    backdrop-filter: blur(2px);
+    position: absolute;
+}
+
+
+
+
+.index-article{
+    width: 850px;/*アーティクルエリアの横幅*/
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 7px;
+    background-color: rgb(245, 247, 241);/*背景色*/
+    box-shadow: 0 0 8px gray;/*影をつける*/
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.slider-text{
+    color: rgb(10, 10, 10);
+    text-shadow: 0 0 8px gray;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+     margin:0 auto;
+ }
+ 
+ .slider img {
+     width:100%;/*スライダー内の画像を横幅100%に*/
+     height:auto;
+ }
+ 
+ /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+ 
+ .slider .slick-slide {
+     margin:0 20px;
+ }
+ 
+ /*矢印の設定*/
+ 
+ /*戻る、次へ矢印の位置*/
+ .slick-prev, 
+ .slick-next {
+     position: absolute;/*絶対配置にする*/
+     top: 45%;
+     cursor: pointer;/*マウスカーソルを指マークに*/
+     outline: none;/*クリックをしたら出てくる枠線を消す*/
+     border-top: 2px solid #666;/*矢印の色*/
+     border-right: 2px solid #666;/*矢印の色*/
+     height: 15px;
+     width: 15px;
+ }
+ 
+ .slick-prev {/*戻る矢印の位置と形状*/
+     left: -1.5%;
+     transform: rotate(-135deg);
+ }
+ 
+ .slick-next {/*次へ矢印の位置と形状*/
+     right: -1.5%;
+     transform: rotate(45deg);
+ }
+ 
+ /*ドットナビゲーションの設定*/
+ 
+ .slick-dots {
+     text-align:center;
+     margin:20px 0 0 0;
+ }
+ 
+ .slick-dots li {
+     display:inline-block;
+     margin:0 5px;
+ }
+ 
+ .slick-dots button{
+     color: transparent;
+     outline: none;
+     width:8px;/*ドットボタンのサイズ*/
+     height:8px;/*ドットボタンのサイズ*/
+     display:block;
+     border-radius:50%;
+     background:#ccc;/*ドットボタンの色*/
+ }
+ 
+ .slick-dots .slick-active button{
+     background:#333;/*ドットボタンの現在地表示の色*/
+ }
+
+.box1{
+    width: 750px;/*box1の横幅*/
+    height: 550px;/*box1の高さ*/
+    margin: 30px auto;/*親要素内で中央表示*/
+    background-color: rgb(245, 247, 241);/*背景色*/
+    /* box-shadow: inset 5px 5px 5px #ccc;内側に影をつける */
+}
+
+footer{
+    width: 100%;/*フッターの横幅*/
+    margin: 0 auto;/*ブラウザ内で中央表示*/
+    padding-top: 20px; /*内側余白→上*/
+    padding-bottom: 30px;/*内側余白→下*/
+    /*padding-left: 30px;*/
+    display: flex;
+    background-color: rgb(240, 253, 193);/*背景色*/
+    color: gray;/*文字色*/
+}
+
+
+.icon{
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    padding-left: 20px;
+    flex-direction: column;
+}
+
+.icon a{
+    /*円の基点とするためrelativeを指定*/
+	position: relative;
+}
+
+.icon.current a,
+.icon a:hover{
+	opacity: 0.5;
+    transition: 1s;
+}
+
+
+
+.about-text{
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 300%;
+    color:rgba(0, 0, 0, 0.363);
+}
+
+
+.about{
+    width: 700px;
+    height: 300px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgba(0, 0, 0, 0.63);
+    
+}
+
+.about-english{
+    width: 800px;
+    height: 100px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(0, 0, 0, 0.63);
+}
+
+
+
+.magazine1{
+    padding-top: 20px;
+    padding-right: 20px;
+    float: right;
+}
+
+.magazine3{
+    padding-top: 20px;
+    padding-left: 20px;
+    float: left;
+}
+
+.footerlogo{
+    width: 1px;
+    height: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.copyright{
+    display: inline;
+    justify-content: flex-end;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/*スクロールリンクの形状*/
+.scroll-top {
+	/*表示位置*/
+	position: fixed;
+	right: 20px;
+	bottom: 10px;
+	z-index: 2;
+	/*はじめは非表示*/
+	opacity: 0;
+	visibility: hidden; 
+	transition: opacity .5s, visibility .5s; /*それぞれに0.5秒の変化のアニメーション*/
+	/*縦書き*/
+	-webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+	/*改行禁止*/
+    white-space: nowrap;
+	/*矢印の動き*/
+	animation: arrowmove 1s ease-in-out infinite;
+}
+
+@keyframes arrowmove{
+      0%{bottom:20px;}
+      50%{bottom:25px;}
+     100%{bottom:20px;}
+ }
+
+
+/*.scroll-viewクラスがついたら出現*/
+.scroll-top.scroll-view {
+	opacity: 1;
+	visibility: visible;
+}
+
+/*リンク全体の aタグの形状*/
+.scroll-top a {
+	text-decoration: none;
+	color: #666;
+	text-transform: uppercase;
+	font-size:0.9rem;
+    display: block;
+}
+
+/*スクロールリンクの形状*/
+
+.js-scroll a::after{
+	content:"";
+	position: absolute;
+	top:0;
+	right:0;
+	width:1px;
+	height: 50px;
+	background:#666;
+}
+
+.js-scroll a::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: -6px;
+    width: 1px;
+    height: 20px;
+    background: #666;
+    transform: skewX(-31deg);
+}
+
+/*Edge IE11 hack*/
+_:-ms-lang(x), .js-scroll a::before{
+	right:-11px;
+}
+
+/*ページトップリンクの形状*/
+
+.js-pagetop a::after{
+	content:"";
+	position: absolute;
+	top:0;
+	right:0;
+	width:1px;
+	height: 50px;
+	background:#666;
+}
+
+.js-pagetop a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 1px;
+    height: 20px;
+    background: #666;
+    transform: skewX(31deg);
+}
+
+/*Edge IE11 hack*/
+_:-ms-lang(x), .js-pagetop a::before{
+	right:0;
+}
+
+/*検証のためのCSS*/
+section{
+padding: 500px 0;
+}
+
+
+
+.box2{
+    float: left;
+    width: 250px;
+    height: 200px;
+}
+
+.box3{
+    float: right;
+}
+
+
+section{
+
+    width: 700px;
+    height: 500px;
+}
+
+/* ブックアニメーション */
+
+.book {
+    width: 800px;
+    height: 0px;
+    margin: 0 auto;
+    padding-top: 20px;
+    perspective:1000px;
+}
+
+.open {
+    transition: 1s;
+    transform-origin: left;
+    transform: rotateY(-180deg);
+}
+
+.book:hover .open {
+    transform: rotateY(.1deg);
+}
+  
+  
+.book {
+    display: flex;
+}
+
+.page {
+    height: 500px;
+    width: 500px;
+}
+
+.open {
+    width: 600px;
+}
+
+.magazine-page-pic img{
+    float: right;
+    width: 50%;
+}
+
+.magazine-page-pic2 img{
+    float: left;
+    width: 50%;
+}
+
+.section1{
+    height: 200px;
+    background-color: rgb(242, 250, 239);
+}
+
+.section1-text{
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    color: #333;
+}
+
+.magazine-page-pic3 img{
+    float: left;
+    width: 50%;
+}
+
+.shopBtn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 249, 248);
+    position: absolute;
+    top: 600px;
+    left: 400px;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+.shopBtn:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.shopBtn2 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(239, 241, 116);
+    position: absolute;
+    top: 750px;
+    left: 900px;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+.shopBtn2:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.shopBtn3 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 249, 248);
+    position: absolute;
+    top: 1560px;
+    left: 300px;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    z-index: 9999;
+}
+
+.shopBtn3:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.shopBtn4 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(252, 184, 205);
+    position: absolute;
+    top: 1590px;
+    left: 800px;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    z-index: 9999;
+}
+
+.shopBtn4:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.shopBtn5 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(241, 9, 82);
+    position: absolute;
+    top: 250px;
+    left: 270px;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    z-index: 9999;
+}
+
+.shopBtn5:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.shopBtn6 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(190, 248, 124);
+    position: absolute;
+    top: 450px;
+    left: 1000px;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    z-index: 9999;
+}
+
+.shopBtn6:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.shopBtn7 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(252, 235, 240);
+    position: absolute;
+    top: 750px;
+    left: 410px;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    z-index: 9999;
+}
+
+.shopBtn7:hover {
+    transform: scale(1.2, 1.2);
+}
+
+.shopBtn8 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(241, 42, 105);
+    position: absolute;
+    top: 1550px;
+    left: 860px;
+    animation: ani9 0.4s ease-in-out infinite alternate;
+    z-index: 9999;
+}
+
+.shopBtn8:hover {
+    transform: scale(1.2, 1.2);
+}
+@keyframes ani9 {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+/* テキストアニメーション */
+.title {
+    position: relative;
+    overflow: hidden;
+    transform: translate(-100%, 0);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.7s;
+    color: #16161598;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 100px;
+    top: 210px;
+    left: 0;
+}
+  
+  .title span {
+    display: block;
+    transform: translate(100%, 0);
+    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s;
+}
+
+  
+/* テキストをみえるようにする */
+  
+  .title.-visible,
+  .title.-visible span {
+    transform: translate(0, 0);
+}
+
+  .catchcopy{
+    font-size: 50px;
+}
+
+  .ask_form{
+    display: block;
+    padding:20px 0px;
+    color: #333;
+}
+
+/* ふわっと出るエフェクト */
+
+.effect-fade {
+    opacity : 0;
+    transform : translate(0, 45px);
+    transition : all 300ms;
+}
+    
+.effect-fade.effect-scroll {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+

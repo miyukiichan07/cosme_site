@@ -1,0 +1,211 @@
+@charset "utf-8";
+.mainvisual_magazine{
+  width: 100%;
+  height: 600px;
+  background-image: url(../images/magazine-mainvisual.jpg);
+  background-repeat: no-repeat;/* 画像をリピートしない */
+  background-size: cover;
+  position: relative;
+  /* 元画像の縦横比は保持して、
+  要素をちょうどよく覆うサイズにする。 */
+}
+
+/* footer中のテキストを非表示 */
+.mainvisual_magazine p{
+  visibility: hidden;
+  /* visibility: hiddenは名の通り、
+  要素はあるけど見えない状態。
+  display:none葉要素も取得されず、
+  完全にその場にない扱い。 */
+}
+
+.filter-magazine{
+  width: 100%;
+  height: 600px;
+  background-color: rgba(232, 235, 217, 0.315);
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+/* .main-visual-r-magazine img{
+  width: 100%;
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: grayscale(100%);
+  transition-duration: 0.5s;
+}
+.main-visual-r-magazine img:hover{
+  filter: grayscale(0);
+  transition-duration: 0.5s;
+}
+
+.main-visual-r-magazine{
+  box-shadow: 0 0 8px gray;/*影をつける*/
+/* } */ 
+
+
+.select2{
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    list-style: none;
+    background-color: rgba(248, 245, 244, 0.027);
+    position: absolute;
+    z-index: 8000;
+}
+
+.select2 li {
+    display: inline-flex;
+    /* height: 100%; */
+    padding-right: 60px;
+    text-align: center;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.select2 li a{
+    width: 100%;
+    /* height: 100px; */
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align: center;
+    display: block;
+    padding:10px 30px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+.select2 li{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+    margin:0 10px;
+}
+
+/*線の基点位置*/
+.select2 li::before,
+.select2 li::after{
+  content:"";
+    /*絶対配置で線の位置を決める*/
+  position: absolute;
+    /*線の形状*/
+  width: 0;
+  height:2px;
+  background:hsl(31, 22%, 58%);
+/*アニメーションの指定*/
+  transition: all 0.2s linear;
+  transition-delay: 0.2s;
+}
+
+.select2 li::before{
+  right: 0;
+  top: 0;
+}
+.select2 li::after{
+  left: 0;
+  bottom: 0;
+}
+
+/*線の基点位置2 spanタグ*/
+
+.select2 li span{
+  display: block;
+}
+
+.select2 li span::before,
+.select2 li span::after{
+  content:"";
+    /*絶対配置で線の位置を決める*/
+  position: absolute;
+    /*線の形状*/
+  width:2px;
+  height:0;
+  background: #b4a89f;
+/*アニメーションの指定*/
+  transition: all 0.2s linear;
+}
+
+.select2 li span::before{
+  left: 0;
+  top: 0;
+}
+.select2 li span::after{
+  right: 0;
+  bottom: 0;
+}
+
+/*現在地とhoverした際の線の変化*/
+
+
+.select2 li:hover::before,
+.select2 li:hover::after{
+  width: 100%;/*横幅を100%に*/
+}
+
+
+.select2 li:hover span::before,
+.select2 li:hover span::after{
+  height: 100%;/*縦幅を100%に*/
+}
+
+
+/* .box50{
+  margin-top: 600px;
+} */
+
+
+.janu-text{
+    color:green;
+    float: left;
+    padding-left: 600px;
+    text-shadow: 0 0 8px gray;
+    text-align: center;
+}
+
+
+
+.table {
+	/*list-style: none;*/
+	display: table;
+  table-layout:fixed;
+	margin: 0 auto;
+  /* padding-bottom: 1px; */
+}
+
+
+.next {
+  width: 700px;
+  height: auto;
+	display: table-cell;
+  vertical-align: middle;
+  background-color: rgb(239, 240, 235);
+
+}
+
+.next img{
+  width: 800px;
+  height: auto;
+  vertical-align:bottom;
+}
+
+.next img:hover{
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.maga-text{
+  font-size: xx-large;
+  color: rgba(51, 51, 51, 0.774);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+.next a{
+  display: block;
+}

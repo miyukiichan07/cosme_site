@@ -1,0 +1,455 @@
+@charset "utf-8";
+
+.rev-form {
+    width: 800px;
+    min-height: 480px;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 10px;
+    padding-left: 40px;
+    background-image: linear-gradient(-225deg, #f6faf9 50%, #8371247a 50%);
+}
+/* form Container */
+.rev-form {
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/* the header form form */
+.head-form {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 1px;
+    text-align: center;
+    background-color: rgba(255, 248, 220, 0.027);
+}
+/* Login title form form */
+.head-form h2 {
+    width: 100%;
+    font-size: 250%;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 1px;
+    font-family: 'Playfair Display', serif;
+    color: #3e403f;
+}
+/*  A welcome message or an explanation of the login form */
+
+
+/* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+
+
+
+
+/* inputs form  */
+input[class="form-input"]{
+    width: 400px;
+    height: 50px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 5px 5px 5px 5px;
+    transition: 0.2s linear;
+    
+}
+
+textarea[class="form-input"]{
+    width: 400px;
+    height: 100px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+  
+    outline: none;
+    border: none;
+  
+    border-radius: 5px 5px 5px 5px;
+    transition: 0.2s linear;
+    
+}
+/*input[id="txt-input"] {width: 250px;}*/
+/* focus  */
+/*input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}/*
+
+/* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+
+/* input[type="text"] {min-width: 250px;} */
+/* buttons  */
+.rev-in,.btn {
+    display: inline-block;
+    color: #252537;
+  
+    width: 420px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 7% auto;
+    letter-spacing: 0.05em;
+}
+
+.field-set{
+    text-align: center;
+}
+
+/* Submits */
+/*.submits {
+    width: 48%;
+    display: inline-block;
+    float: left;
+    margin-left: 2%;
+}
+
+/*       Forgot Password button FAF3DD  */
+/*.frgt-pass {background: transparent;}*/
+
+/*     Sign Up button  */
+/*.sign-up {background: #b4c9c5;}*/
+
+
+/* buttons hover */
+.rev-in,.btn:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+
+/* buttons hover Animation */
+.rev-in,.btn:hover {
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+@keyframes ani9 {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 700px;
+    background-color: beige;
+}
+  
+table tr{
+    border-bottom: solid 1px rgb(228, 194, 142);
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+  
+  
+table th,table td{
+    text-align: center;
+    padding: 10px 0;
+}
+
+.button {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 5pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #f0efc1;     /* 背景色     */
+    color         : #03030396;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #66666685;  /* 影の設定 */
+    border        : 2px solid #f0efc1;    /* 枠の指定 */
+}
+.button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #f0efc1;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+}
+
+.input_review_box{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.input_review{
+    /*ボタンの形状*/
+    display: inline-block;
+    color:#fff;
+    padding: 18px 60px;
+    margin: 0 auto;
+    border-radius:30px;
+    text-decoration: none;
+    outline: none;
+    /*背景の色と形状*/
+    background: linear-gradient(270deg, #cfc978 0%, #c9d392 25%, #d0d493 51%, #ff8635 100%);
+    background-position: 1% 50%;
+    background-size: 200% auto;
+    /*アニメーションの指定*/
+    transition: all 0.3s ease-out;
+}
+
+.input_review:hover{
+    color: #fff;
+    background-position: 99% 50%;
+}
+
+
+/* .review_check_box{
+    background-color: rgba(245, 245, 220, 0.226);
+} */
+
+.box_check{
+    display: inline-block;
+    color: #252537;
+  
+    width: 420px;
+    height: 50px;
+  
+    padding: 0 20px;
+    background: rgb(226, 228, 217);
+    border-radius: 5px;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 7% auto;
+    letter-spacing: 0.05em;
+}
+
+.button2 {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 10pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #f0efc1;     /* 背景色     */
+    color         : #03030396;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #66666685;  /* 影の設定 */
+    border        : 2px solid #f0efc1;    /* 枠の指定 */
+}
+
+.button2:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #f0efc1;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+}
+
+::placeholder{
+    font-size: small;
+    color:#ccc;
+  }
+
+/* .msg{
+    color:#333;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+} */
+
+.insert_link a{
+    font-size: small;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    margin-top: 20px;
+    padding:20px;
+    text-decoration: none;
+    color: #333;
+    background-color: white;
+    box-shadow: 6px 6px 3px #66666685;;
+    /* border-radius: 20px; */
+}
+
+.coupon_main {
+    text-align: center;
+}
+
+.coupon_box {
+    width: 960px;
+    margin: 100px auto;
+}
+
+ol {
+    list-style: none;
+    font-family: serif;
+    border: solid 1px rgb(41, 38, 33);
+    background-color: wheat;
+}
+
+.couponBtn {
+    appearance: none;
+    width: 100px;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+}
+
+.picture_label {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 10pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 20px 12px;   /* 余白       */
+    background    : #f0efc1;     /* 背景色     */
+    color         : #03030396;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #66666685;  /* 影の設定 */
+    border        : 2px solid #f0efc1;    /* 枠の指定 */
+    width: 400px;
+    height: 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* reccomendation */
+
+
+@keyframes horizontal {
+    from {
+      transform: translateX(0vw);
+}
+    to {
+      transform: translateX(10vh);
+    }
+}
+  
+@keyframes vertical {
+    from {
+      transform: translateY(0vh);
+}
+    to {
+      transform: translateY(10vh);
+}
+}
+
+
+
+.rec_background {
+    background-color: #c9d392;
+}
+.rec_h2 {
+    font-family: serif;
+    color: rgb(83, 83, 83);
+    margin-left: 20px;
+}
+.rec_section1 {
+    display: flex;
+    flex-direction: row;
+    height: 650px;
+}
+
+.rec_circle1 {
+    width: 500px;
+    height: 500px;
+    margin: 100px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.568);
+    animation: horizontal 15s ease-in-out infinite alternate both;
+    animation: vertical 15s ease-in-out infinite alternate both;
+}
+
+.rec_circle1 img {
+    margin: 170px;
+}
+
+.rec_circle1 img:hover {
+    opacity: 0.5;
+}
+.rec_circle2 {
+    width: 300px;
+    height: 300px;
+    margin: 100px;
+    /* margin-left: 300px; */
+    border-radius: 50%;
+    background-color: #ec6941;
+    animation: horizontal 10s ease-in-out infinite alternate both;
+}
+
+.rec_circle3 {
+    width: 300px;
+    height: 300px;
+    margin: 100px;
+    margin-left: 150px;
+    border-radius: 50%;
+    background-color: #ec6941;
+    animation: horizontal 10s ease-in-out infinite alternate both;
+}
+
+
+.rec_circle4 {
+    width: 500px;
+    height: 500px;
+    margin-bottom: 100px;
+    margin-left: 70px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.568);
+    animation: vertical 15s ease-in-out infinite alternate both;
+}
+
+.rec_circle4 img {
+    margin: 170px;
+}
+.rec_circle4 img:hover {
+    opacity: 0.5;
+}
+
+.rec_circle_mini1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(236, 248, 242, 0.568);
+    animation: vertical 15s ease-in-out infinite alternate both;
+}
+
+.rec_circle_mini2 {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    border-radius: 50%;
+    background-color: rgba(236, 248, 242, 0.568);
+    animation: vertical 15s ease-in-out infinite alternate both;
+}

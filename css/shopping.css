@@ -1,0 +1,227 @@
+@charset "utf-8";
+.shopping-box{
+    height: 650px;
+    background-color: antiquewhite;
+}
+
+.product1{
+    width: 45%;
+    float: left;
+    display: block;
+}
+
+.product1 img{
+    width: 100%;
+    height: 650px;
+    vertical-align: top;
+    /* display: block; */
+}
+
+.cus_rev{
+    float: right;
+    width: 55%;/*アーティクルエリアの横幅*/
+    box-shadow: 0 0  gray;/*影をつける*/
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.comment{
+    width: 450px;
+    height: 450px;
+    margin: 0px auto;
+    padding: 20px;
+    border: rgb(230, 198, 70);
+    border-radius: 20px;
+    background-color: rgb(212, 228, 156);
+    text-align: left;
+}
+
+
+.main_rating{
+    font-size: x-large;
+}
+/* .comment ul{
+    margin: 30px 30px;
+} */
+
+.review_btn{
+    min-width: 100px;
+    margin-left: 310px;
+    margin-top: 20px;
+    font-family: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #e7f0c0;
+    color: #333;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 40px;
+}
+.price{
+    text-align: center;
+}
+
+.date{
+    text-align: center;
+}
+
+.color_picker{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buy{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /*ボタンの形状*/
+	border: 1px solid #555;
+	border-radius:25px;
+    min-width:210px;
+	padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    outline: none;
+    /*アニメーションの指定*/
+    transition: all .2s;
+}
+
+.buy a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+.buy:hover{
+    background-color: rgb(173, 170, 170);
+}
+
+.customer-review{
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.733);
+}
+
+#btn1{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:  #C77D6D ;
+    border: solid 2px rgb(240, 231, 231);
+    cursor: pointer;
+
+}
+#btn2{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:  #F93A20 ;
+    border: solid 2px rgb(240, 231, 231);
+    cursor: pointer;
+}
+#btn3{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:  #E1A382  ;
+    border: solid 2px rgb(240, 231, 231);
+    cursor: pointer;
+}
+#btn4{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:  #EE58B0   ;
+    border: solid 2px rgb(240, 231, 231);
+    cursor: pointer;
+}
+
+
+.star5_rating{
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    white-space: nowrap;
+    color: #CCCCCC; /* グレーカラー 自由に設定化 */
+    /*font-size: 30px; フォントサイズ 自由に設定化 */
+}
+
+.star5_rating:before, .star5_rating:after{
+    content: '★★★★★';
+}
+
+.star5_rating:after{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #ffcf32; /* イエローカラー 自由に設定化 */
+}
+
+.star5_rating[data-rate="5"]:after{ width: 100%; } /* 星5 */
+.star5_rating[data-rate="4.5"]:after{ width: 90%; } /* 星4.5 */
+.star5_rating[data-rate="4"]:after{ width: 80%; } /* 星4 */
+.star5_rating[data-rate="3.5"]:after{ width: 70%; } /* 星3.5 */
+.star5_rating[data-rate="3"]:after{ width: 60%; } /* 星3 */
+.star5_rating[data-rate="2.5"]:after{ width: 50%; } /* 星2.5 */
+.star5_rating[data-rate="2"]:after{ width: 40%; } /* 星2 */
+.star5_rating[data-rate="1.5"]:after{ width: 30%; } /* 星1.5 */
+.star5_rating[data-rate="1"]:after{ width: 20%; } /* 星1 */
+.star5_rating[data-rate="0.5"]:after{ width: 10%; } /* 星0.5 */
+.star5_rating[data-rate="0"]:after{ width: 0%; } /* 星0 */
+
+
+i {
+    cursor:pointer;
+    padding:10px 12px 8px;
+    background:#fff;
+    border-radius:50%;
+    display:inline-block;
+    margin:20px 5px 15px;
+    color:#aaa;
+    transition:.2s;
+}
+
+i:hover {
+color:rgb(223, 25, 25);
+}
+
+i:before {
+font-family:"Font Awesome 5 Free";
+content:'\f004';
+font-style:normal;
+}
+
+.heart_span {
+position: absolute;
+bottom:70px;
+left:0;
+right:0;
+visibility: hidden;
+transition:.6s;
+z-index:-2;
+font-size:2px;
+color:transparent;
+font-weight:400;
+}
+
+i.press {
+    animation: size .4s;
+    color:#e23b3b;
+}
+  
+.heart_span.press {
+    bottom:120px;
+    font-size:14px;
+    visibility:visible;
+    animation: fade 1s;
+}
+
+.btn_area {
+    display: flex;
+    flex-direction: row;
+}

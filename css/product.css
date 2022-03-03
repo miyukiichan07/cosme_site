@@ -1,0 +1,181 @@
+@charset "utf-8";
+.cart_box{
+    background-color:blanchedalmond;
+}
+table{
+    width: 700px;
+    margin: 0 auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border:solid 1px brown;
+}
+
+tr{
+    height: 50px;
+    /* background-color: rgb(118, 119, 113); */
+    border-radius: 20px;
+    text-align: center;
+    font-size: large;
+    color:brown;
+}
+
+.big_title{
+    font-style: italic;
+}
+.logo{
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    margin-right: 120px;
+    padding-top: 20px;
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.589);
+}
+
+input[type="submit"]{
+    /*ボタンの形状*/
+    display: inline-block;
+    color:#fff;
+    padding: 18px 60px;
+    margin: 20px auto;
+    border-radius:30px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    /*背景の色と形状*/
+    background: linear-gradient(270deg, #cfc978 0%, #c9d392 25%, #d0d493 51%, #ff8635 100%);
+    background-position: 1% 50%;
+    background-size: 200% auto;
+    /*アニメーションの指定*/
+    transition: all 0.3s ease-out;
+    
+}
+
+input[type="submit"]:hover{
+    color: #fff;
+    background-position: 99% 50%;
+}
+
+.btn_box{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.selectdiv {
+  position: relative;
+  /*Don't really need this just for demo styling*/
+  min-width: 100px;
+  margin: 0 auto;
+  /* background-color: brown; */
+}
+
+/* IE11 hide native button (thanks Matt!) */
+select::-ms-expand {
+display: none;
+}
+
+.selectdiv:after {
+  content: '<>';
+  font: 17px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 130px;
+  /*Adjust for position however you want*/
+  top: 18px;
+  /* padding: 0 0 2px; */
+  border-bottom: 1px solid #999;
+  /*left line */
+  position: absolute;
+  pointer-events: none;
+}
+
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  
+  display: block;
+  width: 30%;
+  /* max-width: 320px; */
+  height: 40px;
+  /* float: right; */
+  margin: 0px auto;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: brown;
+  background-color: #ffffff;
+  background-image: none;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+
+.cart_icon{
+    margin-right: 300px;
+    /* padding-left: 200px; */
+    text-align: end;
+}
+
+.cart_logo{
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    margin-right: 120px;
+    padding-top: 20px;
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.589);
+    font-size: large;
+}
+
+.cart_link{
+    display: block;
+    text-align: center;
+    /* text-decoration: none; */
+    color: #333;
+}
+
+.cart_text{
+    text-align: center;
+    font-size: x-large;
+    color: #333;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.serch_area{
+    text-align: center;
+}
+
+input[type="text"]{
+    margin-bottom:  20px;
+}
+
+.insert_link a{
+    font-size: small;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    width: 100px;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    padding:10px;
+    text-decoration: none;
+    text-align: center;
+    color: #333;
+    background-color: white;
+    /* border-radius: 20px; */
+}
+
+.link_area{
+    text-align: center;
+    width: 140px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: blanchedalmond;
+}
